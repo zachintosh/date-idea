@@ -1,0 +1,167 @@
+
+
+
+.card>input {
+    display: block;
+    margin: 5px 0 20px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    padding: 20px;
+    border: solid 1px #ddd;
+    box-shadow: 0 3px 5px -4px #000;
+}
+
+.btn-idea {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 50vw;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .05 ease-in-out;
+}
+
+.btn-idea:active, .btn-idea:focus {
+    outline: none;
+}
+
+.btn-like, .btn-dislike {
+    cursor: pointer;
+    font-size: 46px;
+    margin: 0 5px;
+    transition: all .05s ease-in-out;
+}
+
+.btn-like:hover {
+    color: limegreen;
+}
+
+.btn-dislike:hover {
+    color: red;
+}
+
+.material-icons.md-36 {
+    font-size: 26px;
+    line-height: 46px;
+}
+
+;
+.modal {
+    margin-top: 40px;
+}
+
+.idea-template {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.idea-container {
+    display: flex;
+    width: 50vw;
+}
+
+.idea-title {
+    font-size: 20px;
+}
+
+.idea-description {
+    font-size: 14px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+body > .form-panel {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-panel > div {
+    width: 50%;
+}
+
+.tag-header {
+    margin-bottom: -20px;
+}
+
+/* label color */
+
+.input-field label {
+    color: #00838F;
+}
+
+/* label focus color */
+
+.input-field input:focus+label {
+    color: #43A047 !important;
+}
+
+/* label underline focus color */
+
+.input-field input:focus {
+    border-bottom: 1px solid #43A047 !important;
+    box-shadow: 0 1px 0 0 #43A047 !important;
+}
+
+/* valid color */
+
+.input-field input.valid {
+    border-bottom: 1px solid #1565C0;
+    box-shadow: 0 1px 0 0 #1565C0;
+}
+
+.input-field input.valid+label {
+    color: #1565C0 !important;
+}
+
+/* invalid color */
+
+.input-field input.invalid {
+    border-bottom: 1px solid #00838F;
+    box-shadow: 0 1px 0 0 #00838F;
+}
+
+/* icon prefix focus color */
+
+.input-field .prefix.active {
+    color: #43A047;
+}
+
+.tab-adjuster {
+    padding: 0 !important;
+}
+
+/* Active tab title */
+.tabs .tab a.active {
+  color: #ffffff !important;
+}
+
+/* Hovering over tabs - affects tab titles */
+.tabs .tab a:hover {
+  color: #ffffff !important;
+}
+
+/* Tab titles */
+.tabs .tab a {
+  color: #80cbc4 !important;
+}
+
+/* Tabs */
+.tabs .tab {
+    background-color: #009688;
+    transition: all .2s ease-in-out;
+}
+
+/* Hovering over tabs */
+.tabs .tab:hover {
+    background-color: #26a69a;
+}

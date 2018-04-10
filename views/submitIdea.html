@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Date Idea Generator</title>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Icon Library -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- Our Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+    <!-- Firebase Initialization Stuff -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+</head>
+
+<body>
+    <div class="form-panel">
+        <div class="card-panel">
+            <h4 class="header">Submit an Idea</h4>
+            <span class="grey-text">Enter the details about your date idea - please keep it short!</span>
+            <form id="submit-form" method="POST">
+                <div class="input-field">
+                    <input name="title" id="title" type="text" class="validate" maxlength="40" data-length="40" required>
+                    <label for="title">Title</label>
+                </div>
+                <div class="input-field">
+                    <input name="description" id="description" type="text" class="validate" required maxlength="100" data-length="100">
+                    <label for="description">Description</label>
+                </div>
+                <div class="input-field">
+                    <input name="cost" id="cost" type="number">
+                    <label for="cost">Estimated Cost (in dollars)</label>
+                </div>
+                <h5 class="header">Tags </h5>
+                <span class="grey-text align-right">To add a tag, press enter after typing something in.</span>
+                <div class="input-field">
+                    <div id="tags" class="chips chips-autocomplete"></div>
+                </div>
+            </form>
+            <button id="submit-button" class="btn blue darken-3">Submit</button>
+            <span id="submit-message" style="display:none;margin-left: 20px;" class="green-text darken-1">Your idea has been submitted!</span>
+        </div>
+    </div>
+    <script src="javascripts/submitIdea.js"></script>
+</body>
+
+
+</html>

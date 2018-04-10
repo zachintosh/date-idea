@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <!--
+    Built by Zachary Williams and Theron Dowdle.
+    Uses:
+        - Node JS       ~ Server & Async Code       https://nodejs.org/en/
+        - Firestore     ~ JSON database             https://firebase.google.com/docs/firestore/
+        - Express       ~ Server setup              https://www.npmjs.com/package/express
+    -->
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+        <title>Date Ideas</title>
+
+        <!-- Our Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+        <!-- Native Web Components -->
+        <script type="module" src="/components/ideaDisplay/ideaDisplay.js"></script>
+        <script type="module" src="/components/ideaItem/ideaItem.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Button for favoriting an item -->
+        <div class="flex-container">
+            <button type="button" class="button__favorite">
+
+            </button>
+        </div>
+        <!-- Contents for getting random ideas -->
+        <div class="flex-container">
+            <button type="button" class="button__giveIdea">
+                Idea
+            </button>
+        </div>
+
+        <!-- Contents for getting random ideas -->
+        <div class="flex-container">
+            <button type="button" class="button__showFavorites">
+                Favorites
+            </button>
+        </div>
+
+        <button type="button" class="button__direction button__left">◀</button>
+        <button type="button" class="button__direction button__right">▶</button>
+        <div class="favorites__count"></div>
+
+        <di-idea-display></di-idea-display>
+
+        <!-- Our Script -->
+        <script src="javascripts/index.js"></script>
+        <!-- Material Icon Library -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </body>
+
+
+</html>

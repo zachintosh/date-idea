@@ -1,0 +1,4 @@
+# The key used to access the database | NEVER UPLOAD
+auth.json
+node_modules/
+.vs/
