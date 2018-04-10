@@ -1,10 +1,10 @@
-var admin = require("firebase-admin");
+var admin = require('firebase-admin');
 
-var serviceAccount = require("./date-ideas-firebase-adminsdk-gxxxi-792dcc2b0e.json");
+var serviceAccount = require('./auth.json');
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
-	databaseURL: "https://date-ideas.firebaseio.com"
+	databaseURL: 'https://date-ideas.firebaseio.com'
 });
 
 var db = admin.firestore();

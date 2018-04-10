@@ -26,10 +26,9 @@ class IdeaDisplay extends HTMLElement {
 
     // Add an idea to our list of ideas
     addIdea(idea) {
-        if (this.ideaItems.length === 0) {
-            this.querySelector(`.${elName}__emptyMessage`).remove();
+        if (idea.title !== 'Date Ideas') {
+            this.currentIdea = idea;
         }
-        this.currentIdea = idea;
         // Create the item
         var newIdeaItem = new IdeaItem(idea);
         // Save it here for later use

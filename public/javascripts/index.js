@@ -18,7 +18,13 @@ function getIdea() {
 		.then(idea => {
 			// give this to the idea display deal
 			var display = document.querySelector('di-idea-display');
-			display.addIdea(idea);
+			var currentIdea = document.querySelector('di-idea-display').currentIdea;
+			if (currentIdea && currentIdea.title === idea.title) {
+				console.log('retrieving new');
+				getIdea();
+			} else {
+				display.addIdea(idea);
+			}
 		})
 		.catch(console.error);
 
@@ -135,6 +141,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.button__right').addEventListener('click', () => {
 		cycleFavorites(1);
 	});
+
+	var startingIdea = {
+		title: 'Date Ideas',
+		description: 'Press the button below to get random date ideas!'
+	}
+	document.querySelector('di-idea-display').addIdea(startingIdea);
 
 	buttonStates(1);
 	buttonStates(-1);

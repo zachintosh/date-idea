@@ -7,10 +7,6 @@ export default function getStyles(elName) {
             padding-top: 20vh;
             margin-top: none;
         }
-        .${elName}__emptyMessage {
-            padding: 0 20vw;
-            text-align: center;
-        }
 
         @media screen and (max-width: 500px) {
             .${elName}__ideaContainer {
