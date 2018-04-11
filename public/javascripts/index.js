@@ -37,7 +37,7 @@ function addFavorite() {
 		console.log('Empty Idea');
 		return;
 	}
-
+	
 	// Check if it has been favorited already
 	if (currFavorites) {
 		var itemTitles = currFavorites.map(item => item.title);
@@ -45,6 +45,7 @@ function addFavorite() {
 			currFavorites.push(currentIdea);
 			localStorage.setItem('favoriteIdeas', JSON.stringify(currFavorites))
 			document.querySelector('.button__favorite').style.backgroundImage = 'url("../images/yellowStar.svg")';
+			buttonStates();
 		}
 	}
 }
@@ -55,6 +56,12 @@ function removeFavorite() {
 		currFavorites = currFavorites.filter(item => item.title !== currentIdea.title);
 		localStorage.setItem('favoriteIdeas', JSON.stringify(currFavorites))
 		document.querySelector('.button__favorite').style.backgroundImage = 'url("../images/grayStar.svg")';
+		if (currentFavoriteIndex === 0) {
+			cycleFavorites(1);
+		} else {
+			cycleFavorites(-1);
+		}
+		buttonStates();
 	}
 }
 
@@ -70,7 +77,6 @@ function toggleMode() {
 	mode = mode === 'getIdeas' ? 'favorites' : 'getIdeas';
 
 	if (mode === 'getIdeas') {
-		document.querySelector('.button__favorite').style.display = '';
 		document.querySelector('.button__giveIdea').style.display = '';
 		document.querySelector('.button__showFavorites').innerText = 'Favorites';
 		document.querySelector('.button__left').style.display = 'none';
@@ -78,7 +84,6 @@ function toggleMode() {
 		document.querySelector('.favorites__count').style.display = 'none';
 		document.documentElement.style.setProperty('--c-teal1', '#2ae0b8');
 	} else {
-		document.querySelector('.button__favorite').style.display = 'none';
 		document.querySelector('.button__giveIdea').style.display = 'none';
 		document.querySelector('.button__showFavorites').innerText = 'Get Ideas';
 		document.querySelector('.button__left').style.display = 'block';
@@ -86,16 +91,16 @@ function toggleMode() {
 		document.querySelector('.favorites__count').style.display = 'block';
 		document.documentElement.style.setProperty('--c-teal1', '#ffef47');
 		document.querySelector('di-idea-display').addIdea(currFavorites[currentFavoriteIndex]);
-		buttonStates(1);
-		buttonStates(-1);
 	}
+	buttonStates();
 }
 
-function buttonStates(count) {
-	if (currentFavoriteIndex + count < 0) {
+function buttonStates() {
+	if (currentFavoriteIndex === 0) {
 		document.querySelector('.button__left').style.color = '#888';
 		document.querySelector('.button__left').setAttribute('disabled', 'disabled');
-	} else if (currentFavoriteIndex + count > currFavorites.length - 1) {
+	}
+	if (currentFavoriteIndex === currFavorites.length - 1) {
 		document.querySelector('.button__right').style.color = '#888';
 		document.querySelector('.button__right').setAttribute('disabled', 'disabled');
 	} else {
@@ -104,19 +109,37 @@ function buttonStates(count) {
 		document.querySelector('.button__right').removeAttribute('disabled');
 		document.querySelector('.button__left').removeAttribute('disabled');
 	}
+
+	if (currFavorites.length === 0) {
+		if (mode === 'getIdeas') {
+			document.querySelector('.button__showFavorites').setAttribute('disabled', 'disabled');
+			document.querySelector('.button__showFavorites').style.color = '#888';
+		} else {
+			console.log('potato');
+			toggleMode();
+		}
+	} else {
+		if (mode === 'getIdeas') {
+			document.querySelector('.button__showFavorites').removeAttribute('disabled');
+			document.querySelector('.button__showFavorites').style.color = 'var(--c-teal1)';
+		}
+	}
+
 	document.querySelector('.favorites__count').innerText = `${currentFavoriteIndex + 1} / ${currFavorites.length}`;
 }
 
 function cycleFavorites(count) {
 	// If it ends up less than 0 or higher than total favorites, set it to the right count
 	if (currentFavoriteIndex + count < 0) {
+		buttonStates();
 		return;
 	} else if (currentFavoriteIndex + count > currFavorites.length - 1) {
+		buttonStates();
 		return;
 	} else {
 		currentFavoriteIndex = currentFavoriteIndex + count;
-		buttonStates(count);
 	}
+	buttonStates();
 	document.querySelector('di-idea-display').addIdea(currFavorites[currentFavoriteIndex]);
 	document.querySelector('.favorites__count').innerText = `${currentFavoriteIndex + 1} / ${currFavorites.length}`;
 }

@@ -4,7 +4,7 @@ export default function getStyles(elName) {
             display: flex;
             justify-content: center;
             width: 100%;
-            padding-top: 20vh;
+            padding-top: 20px;
             margin-top: none;
         }
 
