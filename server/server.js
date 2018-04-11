@@ -20,6 +20,11 @@ app.get('/', (req, res) => {
 	res.sendFile(path.resolve('.', 'views/home.html'));
 });
 
+app.get('/journal', (req, res) => {
+	/* Sends the user to the main page for the site */
+	res.sendFile(path.resolve('.', 'views/journal.html'));
+});
+
 /* Retrieve our ideas on server startup */
 var ideas = [];
 https.get('https://date-idea.firebaseio.com/ideas.json', (response) => {

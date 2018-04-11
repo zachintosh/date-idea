@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <!--
+    Built by Zachary Williams and Theron Dowdle.
+    Uses:
+        - Node JS       ~ Server & Async Code       https://nodejs.org/en/
+        - Firestore     ~ JSON database             https://firebase.google.com/docs/firestore/
+        - Express       ~ Server setup              https://www.npmjs.com/package/express
+    -->
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+        <title>Reflective Journal</title>
+
+        <!-- Our Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/journal.css">
+
+        <!-- Native Web Components -->
+        <script type="module" src="/components/journalEntry/journalEntry.js"></script>
+
+    </head>
+
+    <body>
+        <div class="main-title">Reflective Journal</div>
+        <div class="main-description">
+            A collection of learnings gained* during the duration of my adventures in CIT 261. From here on, I will be referred to as "Author." For reference, if the viewer would like to see more of what I learned, rather than what I stuffed into this page, please review my <a href="https://github.com/zlw11063" target="_blank">Github Commit History</a> or my <a href="https://gitlab.com/Xacheiree" target="_blank">GitLab Commit History</a>.
+        </div>
+        <div class="journal-container">
+
+            <div class="month-tag">JAN</div>
+            <di-journal-entry date="Jan '18" title="Git Branching" side="1">
+                Proper use of git branching
+            </di-journal-entry>
+            <di-journal-entry date="Jan '18" title="ES6 Object Deconstruction" side="2">
+                Use of Object/Array ES6 decronstruction syntax
+            </di-journal-entry>
+            <di-journal-entry date="Jan '18" title="ES6 Spread Syntax" side="1">
+                Use of Object/Array ES6 spread syntax   
+            </di-journal-entry>
+            <di-journal-entry date="Jan '18" title="Array Functions" side="2">
+                Author learned Array prototype functions thoroughly
+            </di-journal-entry>
+            <di-journal-entry date="Jan '18" title="Object.keys() and Object.values()" side="1">
+                Functionality of Object.keys() from ES5 and Object.values() from ES8
+            </di-journal-entry>
+            <di-journal-entry date="Jan '18" title="Abandoned JQuery Altogether" side="2">
+                Discovered that ES6 can do almost everything JQuery can
+            </di-journal-entry>
+
+            <div class="month-tag">FEB</div>
+            <di-journal-entry date="Feb '18" title="Native Web Components" side="1">
+                Began learning about Web Components and their purposes
+            </di-journal-entry>
+            <di-journal-entry date="Feb '18" title="Shadow DOM" side="2">
+                Gained some understanding and capability with the Shadow DOM
+            </di-journal-entry>
+            <di-journal-entry date="Feb '18" title="XMLHttp Requests" side="1">
+                Utilized XMLHttp Requests for the first time
+            </di-journal-entry>
+            <di-journal-entry date="Feb '18" title="Native Fetch API" side="2">
+                Discovered that fetch() is much better than XMLHttp Requests
+            </di-journal-entry>
+            <di-journal-entry date="Feb '18" title="UX Clicky Clicky <button onclick=dontClick()>Don't Click This</button>" side="1">
+                Learned how to make people click on stuff
+            </di-journal-entry>
+            <di-journal-entry date="Feb '18" title="JSON Manipulation" side="2">
+                Gained many insights into JSON storage and manipulation
+            </di-journal-entry>
+            <di-journal-entry date="Feb '18" title="Node Logger Project" side="1">
+                Began work on a NodeJS data logger library for Author's workplace
+            </di-journal-entry>
+
+            <div class="month-tag">MAR</div>
+            <di-journal-entry date="Mar '18" title="Express and Firecloud" side="2">
+                Resumed past efforts to learn and implement Express and Firecloud
+            </di-journal-entry>
+            <di-journal-entry date="Mar '18" title="Single Quotes" side="1">
+                Came to a firm testimony of the single quote over double quotes
+            </di-journal-entry>
+            <di-journal-entry date="Mar '18" title="Action Series Model" side="2">
+                Abstracted a major part of a large program
+            </di-journal-entry>
+            <di-journal-entry date="Mar '18" title="CSS3 Animations" side="1">
+                CSS3 Animations are a doozy, but flexible and useful
+            </di-journal-entry>
+            <di-journal-entry date="Mar '18" title="Redemption? <button onclick=dontClick2()>You are going to click this</button>" side="2">
+                Determined that people are easy to manipulate with UX
+            </di-journal-entry>
+            <di-journal-entry date="Mar '18" title="Started CIT 261 Topics" side="1">
+                Finally got started on CIT 261's 13 Topics
+            </di-journal-entry>
+            <di-journal-entry date="Mar '18" title="Finished CIT 261 Topics" side="2">
+                Finished CIT 261's 13 Topics
+            </di-journal-entry>
+
+            <div class="month-tag">APR</div>
+            <di-journal-entry date="Apr '18" title="Chrome Extension" side="1">
+                Created a Chrome Extension for Author's workplace
+            </di-journal-entry>
+            <di-journal-entry date="Apr '18" title="Unit Testing" side="2">
+                Unit Testing is such a pain - but you can't deny how useful it is
+            </di-journal-entry>
+            <di-journal-entry date="Apr '18" title="Started CIT 261 Final Project" side="1">
+                Dusted off old "Date Ideas" personal project intended to learn the MEAN stack
+            </di-journal-entry>
+            <di-journal-entry date="Apr '18" title="Completed CIT 261 Final Project" side="2">
+                Completed mobile version of the Date Ideas site - And learned a lot
+            </di-journal-entry>
+        </div>
+        
+        <div class="disclaimer">
+            *Said learnings were gained during the same months spent in the course, but may not directly relate or come from the course in particular.
+        </div>
+        <script src="javascripts/journal.js"></script>
+    </body>
+
+
+</html>
